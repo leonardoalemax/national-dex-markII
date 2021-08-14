@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/national-dex-markII/static/js/main.cf70c07a.chunk.js",
+    "main.js.map": "/national-dex-markII/static/js/main.cf70c07a.chunk.js.map",
+    "runtime-main.js": "/national-dex-markII/static/js/runtime-main.eba64ea6.js",
+    "runtime-main.js.map": "/national-dex-markII/static/js/runtime-main.eba64ea6.js.map",
+    "static/js/2.59f47845.chunk.js": "/national-dex-markII/static/js/2.59f47845.chunk.js",
+    "static/js/2.59f47845.chunk.js.map": "/national-dex-markII/static/js/2.59f47845.chunk.js.map",
+    "static/js/3.e6da778b.chunk.js": "/national-dex-markII/static/js/3.e6da778b.chunk.js",
+    "static/js/3.e6da778b.chunk.js.map": "/national-dex-markII/static/js/3.e6da778b.chunk.js.map",
+    "index.html": "/national-dex-markII/index.html",
+    "static/js/2.59f47845.chunk.js.LICENSE.txt": "/national-dex-markII/static/js/2.59f47845.chunk.js.LICENSE.txt",
+    "static/media/bolt.ef707976.svg": "/national-dex-markII/static/media/bolt.ef707976.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eba64ea6.js",
+    "static/js/2.59f47845.chunk.js",
+    "static/js/main.cf70c07a.chunk.js"
+  ]
+}
