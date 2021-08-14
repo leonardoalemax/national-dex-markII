@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { LightHover, Light, Screen } from "../../displays.styles";
+import { LightHover, Light, Screen } from '../../displays.styles';
 
 export const PokeButton = styled.button`
 	${Light}

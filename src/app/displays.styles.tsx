@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 export const PinIn = css`
 	border: 2px solid #4d1616;
@@ -19,19 +19,19 @@ export const PinOut = css`
 `;
 
 export const Screen = css`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	background: #7fda54;
 	${PinIn}
 `;
 
 export const ScreenDisabled = css`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	background: #798b71;
 	${PinIn}
 `;
 
 export const ScreenText = css`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	background: #dbcdab;
 	${PinIn}
 `;

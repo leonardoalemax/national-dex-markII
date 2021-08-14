@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { Screen } from "../../displays.styles";
+import { Screen } from '../../displays.styles';
 
 export const DisplayArea = styled.div`
 	${Screen}
@@ -38,7 +38,7 @@ export const DisplayArea = styled.div`
 export const PokeItem = styled.div`
 	display: flex;
 	align-items: center;
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	background: rgba(52, 90, 34, 0.2);
 	border-radius: 10px;
 	padding: 8px;
@@ -51,7 +51,7 @@ export const PokeItem = styled.div`
 `;
 
 export const PokeNumber = styled.div`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	color: #000;
 	min-width: 60px;
 	text-align: center;
@@ -59,7 +59,7 @@ export const PokeNumber = styled.div`
 `;
 
 export const PokeName = styled.div`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	color: #000;
 	width: 100%;
 	text-align: left;
@@ -67,7 +67,7 @@ export const PokeName = styled.div`
 `;
 
 export const PokeType = styled.div`
-	font-family: "Visitor";
+	font-family: 'Visitor';
 	color: #fff;
 	background: #736e76;
 	border-radius: 10px;

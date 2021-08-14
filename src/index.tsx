@@ -1,25 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Display from "./app/components/Display";
-import Header from "./app/components/Header";
-import Search from "./app/components/Search";
-import Info from "./app/components/Info";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import { AppCanvas, Divisor } from "./app/app.styles";
+import App from './app';
 
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<AppCanvas className='App'>
-			<Header />
-			<Search />
-			<Display />
-			<Divisor />
-			<Info />
-		</AppCanvas>
+		<App />
 	</React.StrictMode>,
-	document.getElementById("root")
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { PinOut, Light } from "./displays.styles";
+import { PinOut, Light } from './displays.styles';
 
 export const AppCanvas = styled.div`
 	max-width: 420px;

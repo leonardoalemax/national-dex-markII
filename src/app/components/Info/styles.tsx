@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { ScreenText } from "../../displays.styles";
+import { ScreenText } from '../../displays.styles';
 
 export const InfoArea = styled.div`
 	width: 100%;

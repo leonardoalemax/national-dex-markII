@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderArea = styled.div`
 	width: 100%;
@@ -7,3 +7,5 @@ export const HeaderArea = styled.div`
 	justify-content: space-between;
 	align-items: center;
 `;
+
+export const P = styled.div``;
