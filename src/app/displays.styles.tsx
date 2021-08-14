@@ -36,6 +36,11 @@ export const ScreenText = css`
 	${PinIn}
 `;
 
+export const Type = css`
+	background: #736e76;
+	${PinOut}
+`;
+
 export const Action = css`
 	background: #bf312d;
 	${PinOut}

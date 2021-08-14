@@ -23,6 +23,13 @@ export const PinYellow = styled(Pin)`
 	padding: 0px;
 `;
 
+export const Type = styled.span`
+	${PinOut}
+	background: #736e76;
+	color: #fff;
+	padding: 6px 12px;
+`;
+
 export const Divisor = styled.div`
 	${PinOut}
 	background-color: #EE5752;
