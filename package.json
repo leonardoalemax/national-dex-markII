@@ -1,5 +1,6 @@
 {
 	"name": "national-dex-mark-ii",
+  "homepage": "https://leonardoalemax.github.io/national-dex-markII/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
