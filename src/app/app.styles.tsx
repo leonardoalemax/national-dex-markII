@@ -28,6 +28,62 @@ export const Type = styled.span`
 	background: #736e76;
 	color: #fff;
 	padding: 6px 12px;
+	margin: 4px 0px;
+
+	&.normal {
+		background-color: #a8a77a;
+	}
+	&.fire {
+		background-color: #ee4d30;
+	}
+	&.water {
+		background-color: #6390f0;
+	}
+	&.electric {
+		background-color: #f7d02c;
+	}
+	&.grass {
+		background-color: #30521d;
+	}
+	&.ice {
+		background-color: #96d9d6;
+	}
+	&.fighting {
+		background-color: #c22e28;
+	}
+	&.poison {
+		background-color: #a33ea1;
+	}
+	&.ground {
+		background-color: #e2bf65;
+	}
+	&.flying {
+		background-color: #a98ff3;
+	}
+	&.psychic {
+		background-color: #f95587;
+	}
+	&.bug {
+		background-color: #a6b91a;
+	}
+	&.rock {
+		background-color: #b6a136;
+	}
+	&.ghost {
+		background-color: #735797;
+	}
+	&.dragon {
+		background-color: #6f35fc;
+	}
+	&.dark {
+		background-color: #705746;
+	}
+	&.steel {
+		background-color: #b7b7ce;
+	}
+	&.fairy {
+		background-color: #d685ad;
+	}
 `;
 
 export const Divisor = styled.div`
@@ -35,6 +91,6 @@ export const Divisor = styled.div`
 	background-color: #EE5752;
 	padding: 0;
 	height: 9px;
-	margin: 24px 0;
+	margin: 12px 0;
 	border-radius: 10px;
 `;

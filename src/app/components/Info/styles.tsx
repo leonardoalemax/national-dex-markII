@@ -22,6 +22,7 @@ export const PokeInfoTitle = styled.div`
 export const PokeInfoImageWrapper = styled.div`
 	${ScreenText}
 	display: flex;
+	width: 142px;
 	font-size: 16px;
 	color: #000000;
 	padding: 20px;
@@ -43,6 +44,8 @@ export const PokeDescWrapper = styled.div`
 	grid-column-start: 2;
 	grid-column-end: 4;
 	grid-row-start: 2;
+	height: 100px;
+	overflow: auto;
 `;
 
 export const PokeInfoWrapper = styled.div`
@@ -56,6 +59,8 @@ export const PokeInfoWrapper = styled.div`
 	grid-row-end: 8;
 	display: flex;
 	flex-direction: column;
+	height: 20vh;
+	overflow: auto;
 `;
 
 export const PokeStatus = styled.div`
@@ -70,6 +75,8 @@ export const PokeType = styled.div`
 	flex-direction: row;
 	width: 100%;
 	justify-content: flex-end;
+	display: flex;
+	flex-direction: column;
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 4;

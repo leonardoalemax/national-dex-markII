@@ -7,13 +7,39 @@ import {
 	PokeName,
 } from './styles';
 
-const Display: React.FC = () => (
+import { PokeApiPokemon } from '../../../hooks/PokeApi';
+
+interface DisplayProps {
+	list: PokeApiPokemon[];
+	selected?: PokeApiPokemon;
+	select: (e: PokeApiPokemon) => void;
+}
+
+const Display: React.FC<DisplayProps> = ({
+	list,
+	selected,
+	select,
+}: DisplayProps) => (
 	<DisplayArea>
-		<PokeItem>
-			<PokeNumber>#9999</PokeNumber>
-			<PokeName>Eevee</PokeName>
-			<PokeType>Normal</PokeType>
-		</PokeItem>
+		{list.map((pokemon: PokeApiPokemon) => {
+			const { id, name, sprites, types } = pokemon;
+			return (
+				<PokeItem
+					key={id}
+					className={selected?.name === pokemon.name ? 'selected' : ''}
+					onClick={() => {
+						select(pokemon);
+					}}
+				>
+					<PokeNumber>#{id}</PokeNumber>
+					<img alt="sprit" src={sprites.front_default} />
+					<PokeName>{name}</PokeName>
+					<PokeType className={types[0].type.name}>
+						{types[0].type.name}
+					</PokeType>
+				</PokeItem>
+			);
+		})}
 	</DisplayArea>
 );
 

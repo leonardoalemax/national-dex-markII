@@ -22,6 +22,34 @@ export const Screen = css`
 	font-family: 'Visitor';
 	background: #7fda54;
 	${PinIn}
+
+	&::-webkit-scrollbar {
+		background-color: transparent;
+		width: 16px;
+		border-radius: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-track:hover {
+		background-color: #7fda54;
+		border-radius: 20px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(52, 90, 34, 0.6);
+		border-radius: 16px;
+		border: 5px solid #7fda54;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(52, 90, 34, 0.8);
+		border: 4px solid #7fda54;
+	}
+
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
 `;
 
 export const ScreenDisabled = css`
@@ -34,11 +62,34 @@ export const ScreenText = css`
 	font-family: 'Visitor';
 	background: #dbcdab;
 	${PinIn}
-`;
 
-export const Type = css`
-	background: #736e76;
-	${PinOut}
+	&::-webkit-scrollbar {
+		background-color: transparent;
+		width: 16px;
+		border-radius: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-track:hover {
+		background-color: #dbcdab;
+		border-radius: 20px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.6);
+		border-radius: 16px;
+		border: 5px solid #dbcdab;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+		border: 4px solid #dbcdab;
+	}
+
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
 `;
 
 export const Action = css`

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Eevee from '../../images/eevee.png';
 import {
 	InfoArea,
 	PokeInfoTitle,
@@ -10,22 +9,36 @@ import {
 	PokeType,
 } from './styles';
 
+import { PokeApiPokemon, PokeApiPokemonSpecies } from '../../../hooks/PokeApi';
+
 import { Type } from '../../app.styles';
 
-const Info: React.FC = () => (
+interface InfoProps {
+	selected: PokeApiPokemon;
+	species?: PokeApiPokemonSpecies | undefined;
+}
+
+const Info: React.FC<InfoProps> = ({ selected, species }: InfoProps) => (
 	<InfoArea>
-		<PokeInfoTitle>#133 - Eevee</PokeInfoTitle>
+		<PokeInfoTitle>
+			#{selected.id} - {selected.name}
+		</PokeInfoTitle>
 		<PokeInfoImageWrapper>
-			<img alt="pokeview" src={Eevee} />
+			<img alt="pokeview" src={selected.sprites.front_default} />
 		</PokeInfoImageWrapper>
 
 		<PokeType>
-			<Type>type</Type>
+			{selected.types.map(({ type }) => (
+				<Type className={type.name} key={type.name}>
+					{type.name}
+				</Type>
+			))}
 		</PokeType>
 
 		<PokeDescWrapper>
-			The question of why only Eevee has such unstable genes has still not been
-			solved.
+			{species?.flavor_text_entries[0].flavor_text
+				.replace('\n', ' ')
+				.replace('\f', ' ')}
 		</PokeDescWrapper>
 		<PokeInfoWrapper>
 			<PokeStatus>
