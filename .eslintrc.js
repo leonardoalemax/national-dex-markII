@@ -4,7 +4,7 @@ module.exports = {
 		commonjs: true,
 		es2021: true,
 	},
-	ignorePatterns: ['*.test.js', '*.test.tsx'],
+	ignorePatterns: ['*.test.js', '*.test.tsx', 'build/**'],
 
 	extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
 	parser: '@typescript-eslint/parser',
