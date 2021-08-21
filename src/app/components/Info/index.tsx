@@ -9,12 +9,11 @@ import {
 	PokeType,
 } from './styles';
 
-import { PokeDatabasePokemon } from '../../../hooks/usePokeDatabase';
-
 import { Type } from '../../app.styles';
+import { Pokemon } from '../../../interfaces/Pokemon';
 
 interface InfoProps {
-	selected?: PokeDatabasePokemon;
+	selected?: Pokemon;
 }
 
 const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (

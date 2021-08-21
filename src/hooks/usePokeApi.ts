@@ -1,13 +1,6 @@
 import { allRequest, getPokemon, getSpecies } from '../api/pokeApi';
-import { PokeDatabasePokemon, usePokeDatabaseType } from './usePokeDatabase';
-
-export interface PokeApiPokemonSpecies {
-	base_happiness: string;
-	url: string;
-	flavor_text_entries: {
-		flavor_text: string;
-	}[];
-}
+import { Pokemon } from '../interfaces/Pokemon';
+import { usePokeDatabaseType } from './usePokeDatabase';
 
 export interface PokeApiPokeList {
 	name: string;
@@ -19,7 +12,7 @@ export interface PokeApiSearchResult {
 }
 
 const usePokeApi = (database: usePokeDatabaseType) => {
-	const fetchSpecies = async (pokemon: PokeDatabasePokemon) => {
+	const fetchSpecies = async (pokemon: Pokemon) => {
 		if (database.pokemonByName(pokemon.name)?.species?.base_happiness) return;
 
 		if (!pokemon.species?.url || !pokemon.id) return;

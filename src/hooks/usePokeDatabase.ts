@@ -1,41 +1,24 @@
 import * as React from 'react';
 import { orderBy } from 'lodash';
 
-import { PokeApiPokemonSpecies } from './usePokeApi';
-
-export interface PokeDatabaseTypes {
-	slot: number;
-	type: {
-		name: string;
-	};
-}
-
-export interface PokeDatabasePokemon {
-	name: string;
-	id?: number;
-	url?: string;
-	species?: PokeApiPokemonSpecies;
-	types?: PokeDatabaseTypes[];
-	sprites?: {
-		front_default: string;
-	};
-}
+import { Pokemon } from '../interfaces/Pokemon';
+import { PokemonSpecies } from '../interfaces/PokemonSpecies';
 
 export interface usePokeDatabaseType {
-	list: PokeDatabasePokemon[];
-	addPokemon: (pokemon: PokeDatabasePokemon) => void;
-	addSpecies: (id: number, specie: PokeApiPokemonSpecies) => void;
-	pokemonByName: (name: string) => PokeDatabasePokemon;
-	pokemonById: (id: number) => PokeDatabasePokemon;
+	list: Pokemon[];
+	addPokemon: (pokemon: Pokemon) => void;
+	addSpecies: (id: number, specie: PokemonSpecies) => void;
+	pokemonByName: (name: string) => Pokemon;
+	pokemonById: (id: number) => Pokemon;
 }
 
 const usePokeDatabase: () => usePokeDatabaseType = () => {
-	const [list, updateList] = React.useState<PokeDatabasePokemon[]>([]);
+	const [list, updateList] = React.useState<Pokemon[]>([]);
 
-	const orderList = (pokemonList: PokeDatabasePokemon[]) =>
+	const orderList = (pokemonList: Pokemon[]) =>
 		orderBy(pokemonList, ['id', ['desc']]);
 
-	const addPokemon = (pokemon: PokeDatabasePokemon) => {
+	const addPokemon = (pokemon: Pokemon) => {
 		updateList((e) => orderList([...e, pokemon]));
 	};
 
@@ -43,8 +26,8 @@ const usePokeDatabase: () => usePokeDatabaseType = () => {
 	const pokemonByName = (name: string) =>
 		list.filter((e) => e.name === name)[0];
 
-	const addSpecies = (id: number, specie: PokeApiPokemonSpecies) => {
-		updateList((pokemonList: PokeDatabasePokemon[]) =>
+	const addSpecies = (id: number, specie: PokemonSpecies) => {
+		updateList((pokemonList: Pokemon[]) =>
 			pokemonList.map((pokemon) => {
 				if (pokemon.id !== id) return pokemon;
 

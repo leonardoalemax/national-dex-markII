@@ -7,14 +7,13 @@ import {
 	PokeType,
 	PokeName,
 } from './styles';
-
-import { PokeDatabasePokemon } from '../../../hooks/usePokeDatabase';
+import { Pokemon } from '../../../interfaces/Pokemon';
 
 interface DisplayProps {
-	list: PokeDatabasePokemon[];
+	list: Pokemon[];
 	className: string;
-	selected?: PokeDatabasePokemon;
-	select: (e: PokeDatabasePokemon) => void;
+	selected?: Pokemon;
+	select: (e: Pokemon) => void;
 }
 
 const Display: React.FC<DisplayProps> = ({
@@ -24,7 +23,7 @@ const Display: React.FC<DisplayProps> = ({
 	className,
 }: DisplayProps) => (
 	<DisplayArea className={className}>
-		{list.map((pokemon: PokeDatabasePokemon) => {
+		{list.map((pokemon: Pokemon) => {
 			const { id, name, sprites, types = [] } = pokemon;
 			return (
 				<PokeItem

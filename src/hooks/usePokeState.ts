@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { filter } from 'lodash';
-import usePokeDatabase, { PokeDatabasePokemon } from './usePokeDatabase';
+import usePokeDatabase from './usePokeDatabase';
 import usePokeApi from './usePokeApi';
+import { Pokemon } from '../interfaces/Pokemon';
 
 const usePokeState = () => {
 	const database = usePokeDatabase();
@@ -17,7 +18,7 @@ const usePokeState = () => {
 		setStarted(true);
 	}, [start, started]);
 
-	const select = (pokemon?: PokeDatabasePokemon) => {
+	const select = (pokemon?: Pokemon) => {
 		if (!pokemon) return;
 
 		fetchSpecies(pokemon);
