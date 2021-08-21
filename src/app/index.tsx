@@ -1,27 +1,24 @@
 import * as React from 'react';
+import classnames from 'classnames';
 import { filter } from 'lodash';
 import { AppCanvas, Divisor } from './app.styles';
 
-import usePokeApi from '../hooks/PokeApi';
+import usePokeApi from '../hooks/usePokeApi';
 import Display from './components/Display';
 import Header from './components/Header';
 import Search from './components/Search';
 import Info from './components/Info';
+import usePokeDatabase, { PokeDatabasePokemon } from '../hooks/usePokeDatabase';
 
 const App: React.FC = () => {
-	const {
-		getAll,
-		pokeList,
-		selectedSpecies,
-		selected,
-		select,
-		selectSpecies,
-		getSpecies,
-	} = usePokeApi();
+	const database = usePokeDatabase();
+	const { start } = usePokeApi(database);
+	const [selected, select] = React.useState<PokeDatabasePokemon>();
+
 	const [text, setText] = React.useState('');
 
 	React.useEffect(() => {
-		getAll();
+		start();
 	}, []);
 
 	return (
@@ -30,15 +27,15 @@ const App: React.FC = () => {
 			<Search text={text} setText={setText} />
 			<Display
 				selected={selected}
-				list={filter(pokeList, (e) => e.name.toString().indexOf(text) > -1)}
-				select={(p) => {
-					select(p);
-					selectSpecies(undefined);
-					getSpecies(p.species.url);
-				}}
+				className={classnames({ selected })}
+				list={filter(
+					database.list,
+					(e) => e.name.toString().indexOf(text) > -1
+				)}
+				select={select}
 			/>
 			<Divisor />
-			{selected && <Info selected={selected} species={selectedSpecies} />}
+			<Info selected={selected} />
 		</AppCanvas>
 	);
 };

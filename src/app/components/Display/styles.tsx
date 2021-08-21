@@ -4,9 +4,15 @@ import { Screen } from '../../displays.styles';
 
 export const DisplayArea = styled.div`
 	${Screen}
-	height: 25vh;
+	height: 70vh;
 	overflow-y: auto;
 	overflow-x: hidden;
+
+	transition: height 0.5s ease-in-out;
+
+	&.selected {
+		height: 25vh;
+	}
 `;
 
 export const PokeItem = styled.div`

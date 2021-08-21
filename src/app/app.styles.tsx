@@ -5,6 +5,9 @@ import { PinOut, Light } from './displays.styles';
 export const AppCanvas = styled.div`
 	max-width: 420px;
 	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 `;
 
 export const Pins = styled.div`
