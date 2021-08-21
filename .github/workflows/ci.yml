@@ -15,11 +15,11 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Get yarn cache ⬇
+      - name: Get yarn cache
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: Setup yarn cache 💾
+      - uses: Setup yarn cache
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
