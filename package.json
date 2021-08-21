@@ -37,7 +37,7 @@
 		"eject": "react-scripts eject",
 		"lint": "yarn run lint:js && yarn run lint:css",
 		"lint:js": "eslint ./",
-		"lint:css": "stylelint './src/**/*.{ts,tsx,js,jsx,json,md}'",
+		"lint:css": "stylelint './src/**/*.{ts,tsx,js,jsx,md}'",
 		"lint:fix": "eslint ./ --fix",
 		"postinstall": "husky install",
 		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""

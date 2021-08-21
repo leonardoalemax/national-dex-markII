@@ -7,18 +7,22 @@ const usePokeState = () => {
 	const database = usePokeDatabase();
 	const { start, fetchSpecies } = usePokeApi(database);
 	const [selected, updateSelected] = React.useState(0);
+	const [started, setStarted] = React.useState(false);
 	const [text, setText] = React.useState('');
 
 	React.useEffect(() => {
+		if (started) return;
+
 		start();
-	}, []);
+		setStarted(true);
+	}, [start, started]);
 
 	const select = (pokemon?: PokeDatabasePokemon) => {
-    if(!pokemon) return;
+		if (!pokemon) return;
 
-    fetchSpecies(pokemon);
-    
-    if (pokemon.id) updateSelected(pokemon.id);
+		fetchSpecies(pokemon);
+
+		if (pokemon.id) updateSelected(pokemon.id);
 	};
 
 	return {
