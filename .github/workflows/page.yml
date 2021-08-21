@@ -31,7 +31,9 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: Deploy documentation
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         run: yarn run deploy
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          branch: gh-pages
+          folder: build
