@@ -12,10 +12,11 @@ export interface PokeDatabaseTypes {
 
 export interface PokeDatabasePokemon {
 	name: string;
-	id: number;
-	species: PokeApiPokemonSpecies;
-	types: PokeDatabaseTypes[];
-	sprites: {
+	id?: number;
+	url?: string;
+	species?: PokeApiPokemonSpecies;
+	types?: PokeDatabaseTypes[];
+	sprites?: {
 		front_default: string;
 	};
 }

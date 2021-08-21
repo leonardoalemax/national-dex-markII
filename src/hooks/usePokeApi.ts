@@ -1,7 +1,8 @@
-import axios, { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 
 import * as React from 'react';
 import { useAsyncFn } from 'react-use';
+import { allRequest, getPokemon, getSpecies } from '../api/pokeApi';
 import { PokeDatabasePokemon, usePokeDatabaseType } from './usePokeDatabase';
 
 export interface PokeApiPokemonSpecies {
@@ -22,33 +23,16 @@ export interface PokeApiSearchResult {
 }
 
 const usePokeApi = (database: usePokeDatabaseType) => {
-	const base = 'https://pokeapi.co/api/v2';
-
-	const get = (url: string): AxiosPromise<any[]> => axios.get(url);
-	const species = (url: string): AxiosPromise<PokeApiPokemonSpecies> =>
-		axios.get(url);
-	const fetch = (url: string): AxiosPromise<PokeDatabasePokemon> =>
-		axios.get(url);
-	const allRequest = () => get(`${base}/pokemon/?limit=151`);
-
 	const [allResult, start] = useAsyncFn(allRequest);
 
 	const fetchSpecies = async (pokemon: PokeDatabasePokemon) => {
-		if (database.pokemonByName(pokemon.name)?.species.base_happiness) return;
+		if (database.pokemonByName(pokemon.name)?.species?.base_happiness) return;
 
-		const { data } = await species(pokemon.species.url);
+		if (!pokemon.species?.url || !pokemon.id) return;
+
+		const { data } = await getSpecies(pokemon.species?.url);
 
 		database.addSpecies(pokemon.id, data);
-	};
-
-	const fetchList = async (list: PokeApiPokeList[]) => {
-		list.forEach(async (pokemon: PokeApiPokeList) => {
-			if (database.pokemonByName(pokemon.name)?.id) return;
-
-			const { data: p } = await fetch(`${base}/pokemon/${pokemon.name}`);
-
-			database.addPokemon(p);
-		});
 	};
 
 	React.useEffect(() => {
@@ -57,7 +41,15 @@ const usePokeApi = (database: usePokeDatabaseType) => {
 
 		if (value) {
 			const { data } = value as AxiosResponse<PokeApiSearchResult>;
-			if (data) fetchList(data?.results || []);
+
+			data?.results?.forEach(async (pokemon: PokeApiPokeList) => {
+				if (typeof database.pokemonByName(pokemon.name)?.id !== 'undefined')
+					return;
+
+				const { data: p } = await getPokemon(pokemon);
+
+				database.addPokemon(p);
+			});
 		}
 	}, [allResult]);
 

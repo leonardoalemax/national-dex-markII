@@ -4,9 +4,17 @@ module.exports = {
 		commonjs: true,
 		es2021: true,
 	},
-	ignorePatterns: ['*.test.js', '*.test.tsx', 'build/**'],
+	ignorePatterns: ['*.spec.js', '*.spec.tsx', 'build/**'],
 
-	extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
+	extends: [
+		'plugin:react/recommended',
+		'airbnb',
+		'prettier',
+		'plugin:jest/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:jest-dom/recommended',
+		'plugin:testing-library/react',
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
@@ -22,7 +30,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: ['react', '@typescript-eslint', 'prettier'],
+	plugins: ['react', 'jest', 'jest-dom', '@typescript-eslint', 'prettier'],
 	rules: {
 		'import/extensions': [
 			'error',
@@ -51,5 +59,14 @@ module.exports = {
 			},
 		],
 		'react/react-in-jsx-scope': 'off',
+		'react/prop-types': 'off',
+		'jest/consistent-test-it': [
+			'error',
+			{
+				fn: 'test',
+			},
+		],
+		'no-unused-vars': 'off',
+		'testing-library/no-node-access': 'off',
 	},
 };

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {
 	DisplayArea,
 	PokeItem,
@@ -24,21 +25,23 @@ const Display: React.FC<DisplayProps> = ({
 }: DisplayProps) => (
 	<DisplayArea className={className}>
 		{list.map((pokemon: PokeDatabasePokemon) => {
-			const { id, name, sprites, types } = pokemon;
+			const { id, name, sprites, types = [] } = pokemon;
 			return (
 				<PokeItem
-					key={id}
-					className={selected?.name === pokemon.name ? 'selected' : ''}
+					key={id || name}
+					className={classNames({ selected: selected?.name === pokemon.name })}
 					onClick={() => {
 						select(pokemon);
 					}}
 				>
 					<PokeNumber>#{id}</PokeNumber>
-					<img alt="sprit" src={sprites.front_default} />
+					<img alt="sprit" src={sprites?.front_default} />
 					<PokeName>{name}</PokeName>
-					<PokeType className={types[0].type.name}>
-						{types[0].type.name}
-					</PokeType>
+					{types[0] && (
+						<PokeType className={types[0].type.name}>
+							{types[0].type.name}
+						</PokeType>
+					)}
 				</PokeItem>
 			);
 		})}
