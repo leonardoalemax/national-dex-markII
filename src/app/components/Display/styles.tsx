@@ -4,10 +4,10 @@ import { Screen } from '../../displays.styles';
 
 export const DisplayArea = styled.div`
 	${Screen}
+
 	height: 70vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-
 	transition: height 0.5s ease-in-out;
 
 	&.selected {
@@ -16,14 +16,14 @@ export const DisplayArea = styled.div`
 `;
 
 export const PokeItem = styled.div`
-	display: flex;
 	align-items: center;
-	font-family: 'Visitor';
 	background: rgba(52, 90, 34, 0.2);
 	border-radius: 10px;
-	padding: 8px;
-	margin: 4px 0;
 	cursor: pointer;
+	display: flex;
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin: 4px 0;
+	padding: 8px;
 
 	&:hover {
 		background: rgba(52, 90, 34, 0.4);
@@ -40,31 +40,31 @@ export const PokeItem = styled.div`
 `;
 
 export const PokeNumber = styled.div`
-	font-family: 'Visitor';
 	color: #000;
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin: 0 2px;
 	min-width: 38px;
 	text-align: left;
-	margin: 0 2px;
 `;
 
 export const PokeName = styled.div`
-	font-family: 'Visitor';
 	color: #000;
-	width: 100%;
-	text-align: left;
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 0 8px 0 8px;
+	text-align: left;
+	width: 100%;
 `;
 
 export const PokeType = styled.div`
-	font-family: 'Visitor';
-	color: #eee;
 	background: #736e76;
 	border-radius: 10px;
-	padding: 2px;
+	color: #eee;
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 0 8px;
+	max-width: 240px;
+	padding: 2px;
 	text-align: center;
 	width: 100%;
-	max-width: 240px;
 
 	&.normal {
 		background-color: #a8a77aaa;

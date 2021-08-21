@@ -19,7 +19,7 @@ export const PinOut = css`
 `;
 
 export const Screen = css`
-	font-family: 'Visitor';
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background: #7fda54;
 	${PinIn}
 
@@ -27,39 +27,41 @@ export const Screen = css`
 		background-color: transparent;
 		width: 16px;
 		border-radius: 10px;
-	}
 
-	&::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-track:hover {
-		background-color: #7fda54;
-		border-radius: 20px;
-	}
+		&-button {
+			display: none;
+		}
 
-	&::-webkit-scrollbar-thumb {
-		background-color: rgba(52, 90, 34, 0.6);
-		border-radius: 16px;
-		border: 5px solid #7fda54;
-	}
-	&::-webkit-scrollbar-thumb:hover {
-		background-color: rgba(52, 90, 34, 0.8);
-		border: 4px solid #7fda54;
-	}
+		&-thumb {
+			background-color: rgba(52, 90, 34, 0.6);
+			border-radius: 16px;
+			border: 5px solid #7fda54;
+		}
 
-	&::-webkit-scrollbar-button {
-		display: none;
+		&-track {
+			background-color: transparent;
+		}
+
+		&-thumb:hover {
+			background-color: rgba(52, 90, 34, 0.8);
+			border: 4px solid #7fda54;
+		}
+
+		&-track:hover {
+			background-color: #7fda54;
+			border-radius: 20px;
+		}
 	}
 `;
 
 export const ScreenDisabled = css`
-	font-family: 'Visitor';
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background: #798b71;
 	${PinIn}
 `;
 
 export const ScreenText = css`
-	font-family: 'Visitor';
+	font-family: 'Visitor', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background: #dbcdab;
 	${PinIn}
 
@@ -67,28 +69,30 @@ export const ScreenText = css`
 		background-color: transparent;
 		width: 16px;
 		border-radius: 10px;
-	}
 
-	&::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-track:hover {
-		background-color: #dbcdab;
-		border-radius: 20px;
-	}
+		&-button {
+			display: none;
+		}
 
-	&::-webkit-scrollbar-thumb {
-		background-color: rgba(0, 0, 0, 0.6);
-		border-radius: 16px;
-		border: 5px solid #dbcdab;
-	}
-	&::-webkit-scrollbar-thumb:hover {
-		background-color: rgba(0, 0, 0, 0.8);
-		border: 4px solid #dbcdab;
-	}
+		&-track {
+			background-color: transparent;
+		}
 
-	&::-webkit-scrollbar-button {
-		display: none;
+		&-thumb {
+			background-color: rgba(0, 0, 0, 0.6);
+			border-radius: 16px;
+			border: 5px solid #dbcdab;
+		}
+
+		&-track:hover {
+			background-color: #dbcdab;
+			border-radius: 20px;
+		}
+
+		&-thumb:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+			border: 4px solid #dbcdab;
+		}
 	}
 `;
 

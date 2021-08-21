@@ -37,9 +37,10 @@ const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 				</PokeType>
 
 				<PokeDescWrapper>
-					{selected.species?.flavor_text_entries[0].flavor_text
-						.replace('\n', ' ')
-						.replace('\f', ' ')}
+					{selected.species?.flavor_text_entries?.length > 0 &&
+						selected.species?.flavor_text_entries[0].flavor_text
+							.replace('\n', ' ')
+							.replace('\f', ' ')}
 				</PokeDescWrapper>
 				<PokeInfoWrapper>
 					<PokeStatus>

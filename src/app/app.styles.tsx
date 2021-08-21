@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { PinOut, Light } from './displays.styles';
 
 export const AppCanvas = styled.div`
-	max-width: 420px;
-	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
+	max-width: 420px;
+	width: 100%;
 `;
 
 export const Pins = styled.div`
@@ -16,8 +16,8 @@ export const Pins = styled.div`
 `;
 
 export const Pin = styled.div`
-	width: 13px;
 	height: 12px;
+	width: 13px;
 `;
 
 export const PinYellow = styled(Pin)`
@@ -30,8 +30,8 @@ export const Type = styled.span`
 	${PinOut}
 	background: #736e76;
 	color: #fff;
-	padding: 6px 12px;
 	margin: 4px 0px;
+	padding: 6px 12px;
 
 	&.normal {
 		background-color: #a8a77a;
@@ -92,8 +92,8 @@ export const Type = styled.span`
 export const Divisor = styled.div`
 	${PinOut}
 	background-color: #EE5752;
-	padding: 0;
+	border-radius: 10px;
 	height: 9px;
 	margin: 12px 0;
-	border-radius: 10px;
+	padding: 0;
 `;

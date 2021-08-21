@@ -35,14 +35,14 @@ module.exports = {
 			},
 		],
 		'no-use-before-define': 'off',
-    "@typescript-eslint/no-unused-vars": [
-      2,
-      {
-          "args": "none"
-      }
-    ],
-    'camelcase': 'off',
-    'react/require-default-props': 'off',
+		'@typescript-eslint/no-unused-vars': [
+			2,
+			{
+				args: 'none',
+			},
+		],
+		camelcase: 'off',
+		'react/require-default-props': 'off',
 		'@typescript-eslint/no-use-before-define': ['error'],
 		'react/jsx-filename-extension': [
 			1,

@@ -26,7 +26,6 @@ export const PokeInfoImageWrapper = styled.div`
 	font-size: 16px;
 	color: #000000;
 	padding: 20px;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	grid-column-start: 1;
@@ -71,8 +70,6 @@ export const PokeStatus = styled.div`
 `;
 
 export const PokeType = styled.div`
-	display: flex;
-	flex-direction: row;
 	width: 100%;
 	justify-content: flex-end;
 	display: flex;

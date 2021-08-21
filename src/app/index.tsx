@@ -8,13 +8,12 @@ import Display from './components/Display';
 import Header from './components/Header';
 import Search from './components/Search';
 import Info from './components/Info';
-import usePokeDatabase, { PokeDatabasePokemon } from '../hooks/usePokeDatabase';
+import usePokeDatabase from '../hooks/usePokeDatabase';
 
 const App: React.FC = () => {
 	const database = usePokeDatabase();
-	const { start } = usePokeApi(database);
-	const [selected, select] = React.useState<PokeDatabasePokemon>();
-
+	const { start, fetchSpecies } = usePokeApi(database);
+	const [selected, select] = React.useState(0);
 	const [text, setText] = React.useState('');
 
 	React.useEffect(() => {
@@ -24,18 +23,27 @@ const App: React.FC = () => {
 	return (
 		<AppCanvas>
 			<Header />
-			<Search text={text} setText={setText} />
+			<Search
+				text={text}
+				setText={setText}
+				reset={() => {
+					select(0);
+				}}
+			/>
 			<Display
-				selected={selected}
+				selected={database.pokemonById(selected)}
 				className={classnames({ selected })}
 				list={filter(
 					database.list,
 					(e) => e.name.toString().indexOf(text) > -1
 				)}
-				select={select}
+				select={(e) => {
+					fetchSpecies(e);
+					select(e.id);
+				}}
 			/>
 			<Divisor />
-			<Info selected={selected} />
+			<Info selected={database.pokemonById(selected)} />
 		</AppCanvas>
 	);
 };
