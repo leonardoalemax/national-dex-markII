@@ -35,56 +35,40 @@ const getFlavorByEn = (pokemon: Pokemon) => {
 
 const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 	<InfoArea className={classNames({ selected })}>
-		<PokeInfoTitle>
-			#{selected?.id} - {selected?.name}
-		</PokeInfoTitle>
-		<PokeView>
-			<PokeViewLeft>
-				<PokeInfoImageWrapper>
-					<img alt="pokeview" src={selected?.sprites?.front_default} />
-				</PokeInfoImageWrapper>
+		{selected && (
+			<>
+				<PokeInfoTitle>
+					#{selected.id} - {selected.name}
+				</PokeInfoTitle>
+				<PokeView>
+					<PokeViewLeft>
+						<PokeInfoImageWrapper>
+							<img alt="pokeview" src={selected.sprites?.front_default} />
+						</PokeInfoImageWrapper>
 
-				<PokeType>
-					{selected?.types?.map(({ type }) => (
-						<Type className={type.name} key={type.name}>
-							{type.name}
-						</Type>
-					))}
-				</PokeType>
-			</PokeViewLeft>
-			<PokeViewRight>
-				<PokeDescWrapper>
-					{selected &&
-						getFlavorByEn(selected).replace('\n', ' ').replace('\f', ' ')}
-				</PokeDescWrapper>
-				<PokeInfoWrapper>
-					<PokeStatus>
-						speed: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						special-defense: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						special-attack: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						defense: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						attack: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						hp: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						Height: <span>55</span>
-					</PokeStatus>
-					<PokeStatus>
-						Weight: <span>55</span>
-					</PokeStatus>
-				</PokeInfoWrapper>
-			</PokeViewRight>
-		</PokeView>
+						<PokeType>
+							{selected.types?.map(({ type }) => (
+								<Type className={type.name} key={type.name}>
+									{type.name}
+								</Type>
+							))}
+						</PokeType>
+					</PokeViewLeft>
+					<PokeViewRight>
+						<PokeDescWrapper>
+							{getFlavorByEn(selected).replace('\n', ' ').replace('\f', ' ')}
+						</PokeDescWrapper>
+						<PokeInfoWrapper>
+							{selected.stats?.map(({ base_stat, stat }) => (
+								<PokeStatus key={stat.name}>
+									{stat.name}: <span>{base_stat}</span>
+								</PokeStatus>
+							))}
+						</PokeInfoWrapper>
+					</PokeViewRight>
+				</PokeView>
+			</>
+		)}
 	</InfoArea>
 );
 
