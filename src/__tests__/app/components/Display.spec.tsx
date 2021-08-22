@@ -12,7 +12,7 @@ test('renders element properly in default state', () => {
 	expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div
-		    class="sc-bdnxRM bJPpcj"
+		    class="sc-bdnxRM kBUBdL"
 		  />
 		</div>
 	`);
@@ -35,7 +35,7 @@ test('renders element properly with fist type list', () => {
 	expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div
-		    class="sc-bdnxRM bJPpcj selected"
+		    class="sc-bdnxRM kBUBdL selected"
 		  >
 		    <div
 		      class="sc-gtsrHT cCFGuB"
@@ -69,7 +69,7 @@ test('renders element properly with more data filled list', () => {
 	expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div
-		    class="sc-bdnxRM bJPpcj"
+		    class="sc-bdnxRM kBUBdL"
 		  >
 		    <div
 		      class="sc-gtsrHT cCFGuB"

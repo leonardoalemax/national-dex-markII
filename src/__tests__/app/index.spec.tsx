@@ -8,10 +8,10 @@ test('renders element properly', () => {
 	expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div
-		    class="sc-bdnxRM WxyXX"
+		    class="sc-bdnxRM fhpvmG"
 		  >
 		    <div
-		      class="sc-kEqXSa jATyVb"
+		      class="sc-kEqXSa kEzvjY"
 		    >
 		      <div
 		        class="sc-gtsrHT FYnNa"
@@ -49,14 +49,114 @@ test('renders element properly', () => {
 		      </button>
 		    </div>
 		    <div
-		      class="sc-gKAaRy dPWzAX"
+		      class="sc-gKAaRy ddJvxD"
 		    />
 		    <div
-		      class="sc-jSFjdj HvoST"
+		      class="sc-jSFjdj icWWEv"
 		    />
 		    <div
-		      class="sc-ksluID cgDwLi"
-		    />
+		      class="sc-ksluID bzHXHd"
+		    >
+		      <div
+		        class="sc-bkbkJK enRLMt"
+		      >
+		        #
+		         - 
+		      </div>
+		      <div
+		        class="sc-hBMUJo lpdjbR"
+		      >
+		        <div
+		          class="sc-fFSPTT kMyCIe"
+		        >
+		          <div
+		            class="sc-iemWCZ fcykSJ"
+		          >
+		            <img
+		              alt="pokeview"
+		            />
+		          </div>
+		          <div
+		            class="sc-kfYoZR eCngaU"
+		          />
+		        </div>
+		        <div
+		          class="sc-fnVZcZ hnTQuP"
+		        >
+		          <div
+		            class="sc-dIvrsQ bDCxeY"
+		          />
+		          <div
+		            class="sc-hHEiqL gyUTlc"
+		          >
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              speed: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              special-defense: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              special-attack: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              defense: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              attack: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              hp: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              Height: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		            <div
+		              class="sc-dlMDgC dCcKtw"
+		            >
+		              Weight: 
+		              <span>
+		                55
+		              </span>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
 		  </div>
 		</div>
 	`);

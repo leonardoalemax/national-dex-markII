@@ -19,7 +19,10 @@ const usePokeState = () => {
 	}, [start, started]);
 
 	const select = (pokemon?: Pokemon) => {
-		if (!pokemon) return;
+		if (!pokemon) {
+			updateSelected(0);
+			return;
+		}
 
 		fetchSpecies(pokemon);
 

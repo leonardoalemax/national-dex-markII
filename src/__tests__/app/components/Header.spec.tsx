@@ -8,7 +8,7 @@ test('renders element properly', () => {
 	expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div
-		    class="sc-bdnxRM bnyziN"
+		    class="sc-bdnxRM ijJMLO"
 		  >
 		    <div
 		      class="sc-hKFxyN bQaenu"

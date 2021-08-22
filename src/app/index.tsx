@@ -14,7 +14,7 @@ const App: React.FC = () => {
 	return (
 		<AppCanvas>
 			<Header />
-			<Search text={text} setText={setText} reset={select} />
+			<Search text={text} setText={setText} reset={() => select()} />
 			<Display
 				selected={selected}
 				className={classnames({ selected })}
