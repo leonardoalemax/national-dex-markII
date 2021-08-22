@@ -24,16 +24,15 @@ const usePokeApi = (database: PokeDatabaseType) => {
 
 	const start = async () => {
 		const { data } = await allRequest();
-		if (data) {
-			data?.results?.forEach(async (pokemon: PokeApiPokeList) => {
-				if (typeof database.pokemonByName(pokemon.name)?.id !== 'undefined')
-					return;
+		
+    data?.results?.forEach(async (pokemon: PokeApiPokeList) => {
+      if (typeof database.pokemonByName(pokemon.name)?.id !== 'undefined')
+        return;
 
-				const { data: p } = await getPokemon(pokemon);
+      const { data: p } = await getPokemon(pokemon);
 
-				database.addPokemon(p);
-			});
-		}
+      database.addPokemon(p);
+    });
 	};
 
 	return {
