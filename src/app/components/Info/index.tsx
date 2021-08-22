@@ -20,6 +20,19 @@ interface InfoProps {
 	selected?: Pokemon;
 }
 
+const getFlavorByEn = (pokemon: Pokemon) => {
+	const { flavor_text_entries } = pokemon?.species || {};
+
+	if (flavor_text_entries && flavor_text_entries.length > 0) {
+		const selected = flavor_text_entries.find(
+			(entry) => entry.language.name === 'en'
+		);
+		return selected?.flavor_text || '';
+	}
+
+	return '';
+};
+
 const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 	<InfoArea className={classNames({ selected })}>
 		<PokeInfoTitle>
@@ -41,11 +54,8 @@ const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 			</PokeViewLeft>
 			<PokeViewRight>
 				<PokeDescWrapper>
-					{selected?.species &&
-						selected?.species?.flavor_text_entries?.length > 0 &&
-						selected?.species?.flavor_text_entries[0].flavor_text
-							.replace('\n', ' ')
-							.replace('\f', ' ')}
+					{selected &&
+						getFlavorByEn(selected).replace('\n', ' ').replace('\f', ' ')}
 				</PokeDescWrapper>
 				<PokeInfoWrapper>
 					<PokeStatus>
