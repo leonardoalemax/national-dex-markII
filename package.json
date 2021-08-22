@@ -42,6 +42,14 @@
 		"postinstall": "husky install",
 		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
 	},
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/**/reportWebVitals.ts",
+      "!src/**/index.tsx"
+    ]
+  },
 	"eslintConfig": {
 		"extends": [
 			"react-app",
