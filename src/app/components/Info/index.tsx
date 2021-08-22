@@ -17,7 +17,7 @@ import { Type } from '../../app.styles';
 import { Pokemon } from '../../../interfaces/Pokemon';
 
 interface InfoProps {
-	selected?: Pokemon;
+	selected?: Pokemon | false;
 }
 
 const getFlavorByEn = (pokemon: Pokemon) => {
@@ -35,7 +35,7 @@ const getFlavorByEn = (pokemon: Pokemon) => {
 
 const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 	<InfoArea className={classNames({ selected })}>
-		{selected && (
+		{typeof selected !== 'boolean' && selected && (
 			<>
 				<PokeInfoTitle>
 					#{selected.id} - {selected.name}

@@ -33,7 +33,7 @@ const usePokeState = () => {
 		text,
 		setText,
 		list: filter(database.list, (e) => e.name.toString().indexOf(text) > -1),
-		selected: database.pokemonById(selected),
+		selected: selected !== 0 && database.pokemonById(selected),
 		select,
 	};
 };

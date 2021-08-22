@@ -59,7 +59,7 @@ test('renders element properly with fist type list', () => {
 	`);
 });
 
-test('renders element properly with more data filled list', () => {
+test('renders element properly with more data filled list with no selected', () => {
 	const select = jest.fn();
 
 	const { container } = render(
@@ -73,6 +73,56 @@ test('renders element properly with more data filled list', () => {
 		  >
 		    <div
 		      class="sc-gtsrHT cCFGuB"
+		    >
+		      <div
+		        class="sc-dlnjwi kenTwt"
+		      >
+		        #
+		        100
+		      </div>
+		      <img
+		        alt="sprit"
+		        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png"
+		      />
+		      <div
+		        class="sc-hKFxyN lmoTsb"
+		      >
+		        voltorb
+		      </div>
+		      <div
+		        class="sc-eCApnc crGkvA electric"
+		      >
+		        electric
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	`);
+
+	expect(screen.getByText('voltorb')).toBeInTheDocument();
+	fireEvent.click(screen.getByText('voltorb'));
+	expect(select).toHaveBeenCalledWith(Voltorb);
+});
+
+test('renders element properly with more data filled list selected', () => {
+	const select = jest.fn();
+
+	const { container } = render(
+		<Display
+			list={[{ ...(Voltorb as any) }]}
+			select={select}
+			selected={Voltorb as any}
+			className=""
+		/>
+	);
+
+	expect(container).toMatchInlineSnapshot(`
+		<div>
+		  <div
+		    class="sc-bdnxRM kBUBdL"
+		  >
+		    <div
+		      class="sc-gtsrHT cCFGuB selected"
 		    >
 		      <div
 		        class="sc-dlnjwi kenTwt"

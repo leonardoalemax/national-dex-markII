@@ -12,7 +12,7 @@ import { Pokemon } from '../../../interfaces/Pokemon';
 interface DisplayProps {
 	list: Pokemon[];
 	className: string;
-	selected?: Pokemon;
+	selected?: Pokemon | false;
 	select: (e: Pokemon) => void;
 }
 
@@ -28,7 +28,9 @@ const Display: React.FC<DisplayProps> = ({
 			return (
 				<PokeItem
 					key={id || name}
-					className={classNames({ selected: selected?.name === pokemon.name })}
+					className={classNames({
+						selected: selected && selected?.name === pokemon.name,
+					})}
 					onClick={() => {
 						select(pokemon);
 					}}
