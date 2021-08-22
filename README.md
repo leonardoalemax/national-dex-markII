@@ -33,3 +33,25 @@
     <img alt="Conventional Commits" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge">
   </a>
 </p>
+
+## Code Report
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=bugs)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=code_smells)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=ncloc)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=alert_status)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=security_rating)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=sqale_index)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
+
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=leonardoalemax_national-dex-markII&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=leonardoalemax_national-dex-markII)
