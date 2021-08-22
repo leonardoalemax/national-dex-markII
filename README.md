@@ -14,6 +14,10 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/leonardoalemax/national-dex-markII?style=for-the-badge">
   </a>
 
+  <a href="https://github.com/leonardoalemax/national-dex-markII/graphs/commit-activity">
+    <img alt="GitHub last commit" src="https://img.shields.io/codecov/c/github/leonardoalemax/national-dex-markII?style=for-the-badge">
+  </a>
+
   <a href="https://github.com/leonardoalemax/national-dex-markII/network/updates">
     <img alt="Dependabot" src="https://img.shields.io/badge/Dependabot-enabled-brightgreen?style=for-the-badge">
   </a>
