@@ -1,4 +1,5 @@
 import { PokemonSpecies } from './PokemonSpecies';
+import { PokemonStats } from './PokemonStats';
 import { PokemonTypes } from './PokemonTypes';
 
 export interface Pokemon {
@@ -7,6 +8,7 @@ export interface Pokemon {
 	url?: string;
 	species?: PokemonSpecies;
 	types?: PokemonTypes[];
+  stats?: PokemonStats[]
 	sprites?: {
 		front_default: string;
 	};
