@@ -1,6 +1,6 @@
 import { allRequest, getPokemon, getSpecies } from '../api/pokeApi';
 import { Pokemon } from '../interfaces/Pokemon';
-import { usePokeDatabaseType } from './usePokeDatabase';
+import { PokeDatabaseType } from './usePokeDatabase';
 
 export interface PokeApiPokeList {
 	name: string;
@@ -11,7 +11,7 @@ export interface PokeApiSearchResult {
 	results?: PokeApiPokeList[];
 }
 
-const usePokeApi = (database: usePokeDatabaseType) => {
+const usePokeApi = (database: PokeDatabaseType) => {
 	const fetchSpecies = async (pokemon: Pokemon) => {
 		if (database.pokemonByName(pokemon.name)?.species?.base_happiness) return;
 

@@ -4,7 +4,7 @@ import { orderBy } from 'lodash';
 import { Pokemon } from '../interfaces/Pokemon';
 import { PokemonSpecies } from '../interfaces/PokemonSpecies';
 
-export interface usePokeDatabaseType {
+export interface PokeDatabaseType {
 	list: Pokemon[];
 	addPokemon: (pokemon: Pokemon) => void;
 	addSpecies: (id: number, specie: PokemonSpecies) => void;
@@ -12,7 +12,7 @@ export interface usePokeDatabaseType {
 	pokemonById: (id: number) => Pokemon;
 }
 
-const usePokeDatabase: () => usePokeDatabaseType = () => {
+const usePokeDatabase: () => PokeDatabaseType = () => {
 	const [list, updateList] = React.useState<Pokemon[]>([]);
 
 	const orderList = (pokemonList: Pokemon[]) =>
