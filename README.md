@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <a href="https://leonardoalemax.github.io/national-dex-markII/">
     <img alt="ocean-logo" src="./project_logo.png" >

@@ -4,61 +4,75 @@ import { ScreenText } from '../../displays.styles';
 
 export const InfoArea = styled.div`
 	width: 100%;
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 8px;
+	height: 0;
+	overflow: hidden;
+
+	transition: height 0.5s ease-in-out;
+
+	&.selected {
+		height: 100%;
+	}
+`;
+
+export const PokeView = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+`;
+
+export const PokeViewRight = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+`;
+
+export const PokeViewLeft = styled.div`
+	width: 142px;
 `;
 
 export const PokeInfoTitle = styled.div`
 	${ScreenText}
 	display: flex;
-	font-size: 16px;
+	width: 100%;
+	font-size: 14px;
 	color: #000000;
 	padding: 12px;
-	grid-column-start: 1;
-	grid-column-end: 4;
-	grid-row-start: 1;
 `;
 
 export const PokeInfoImageWrapper = styled.div`
 	${ScreenText}
 	display: flex;
 	width: 142px;
-	font-size: 16px;
+	font-size: 14px;
 	color: #000000;
 	padding: 20px;
 	align-items: center;
 	justify-content: center;
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 4;
 `;
 
 export const PokeDescWrapper = styled.div`
 	${ScreenText}
 	display: flex;
-	font-size: 16px;
+	font-size: 14px;
 	color: #000000;
-	padding: 16px;
-	grid-column-start: 2;
-	grid-column-end: 4;
-	grid-row-start: 2;
+	padding: 14px;
 	height: 100px;
 	overflow: auto;
 `;
 
 export const PokeInfoWrapper = styled.div`
 	${ScreenText}
-	font-size: 16px;
+	font-size: 14px;
 	color: #000000;
-	padding: 16px;
-	grid-column-start: 2;
-	grid-column-end: 4;
-	grid-row-start: 3;
-	grid-row-end: 8;
+	padding: 14px;
 	display: flex;
 	flex-direction: column;
-	height: 20vh;
+	height: 100%;
 	overflow: auto;
 `;
 
@@ -74,8 +88,4 @@ export const PokeType = styled.div`
 	justify-content: flex-end;
 	display: flex;
 	flex-direction: column;
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 4;
-	grid-row-end: 5;
 `;

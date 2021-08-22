@@ -6,6 +6,10 @@ export const HeaderArea = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+	img {
+		width: 144px;
+	}
 `;
 
 export const P = styled.div``;

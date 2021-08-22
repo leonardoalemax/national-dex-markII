@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { PinOut, Light } from './displays.styles';
 
 export const AppCanvas = styled.div`
+	align-items: center;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	max-width: 420px;
 	width: 100%;
+	justify-self: center;
+	padding: 16px;
 `;
 
 export const Pins = styled.div`
@@ -96,4 +99,5 @@ export const Divisor = styled.div`
 	height: 9px;
 	margin: 12px 0;
 	padding: 0;
+	width: 100%;
 `;

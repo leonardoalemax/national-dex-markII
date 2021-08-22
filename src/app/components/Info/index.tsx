@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {
 	InfoArea,
 	PokeInfoTitle,
@@ -7,6 +8,9 @@ import {
 	PokeDescWrapper,
 	PokeStatus,
 	PokeType,
+	PokeViewLeft,
+	PokeViewRight,
+	PokeView,
 } from './styles';
 
 import { Type } from '../../app.styles';
@@ -17,28 +21,29 @@ interface InfoProps {
 }
 
 const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
-	<InfoArea>
-		{selected && (
-			<>
-				<PokeInfoTitle>
-					#{selected.id} - {selected.name}
-				</PokeInfoTitle>
+	<InfoArea className={classNames({ selected })}>
+		<PokeInfoTitle>
+			#{selected?.id} - {selected?.name}
+		</PokeInfoTitle>
+		<PokeView>
+			<PokeViewLeft>
 				<PokeInfoImageWrapper>
 					<img alt="pokeview" src={selected?.sprites?.front_default} />
 				</PokeInfoImageWrapper>
 
 				<PokeType>
-					{selected.types?.map(({ type }) => (
+					{selected?.types?.map(({ type }) => (
 						<Type className={type.name} key={type.name}>
 							{type.name}
 						</Type>
 					))}
 				</PokeType>
-
+			</PokeViewLeft>
+			<PokeViewRight>
 				<PokeDescWrapper>
-					{selected.species &&
-						selected.species?.flavor_text_entries?.length > 0 &&
-						selected.species?.flavor_text_entries[0].flavor_text
+					{selected?.species &&
+						selected?.species?.flavor_text_entries?.length > 0 &&
+						selected?.species?.flavor_text_entries[0].flavor_text
 							.replace('\n', ' ')
 							.replace('\f', ' ')}
 				</PokeDescWrapper>
@@ -68,8 +73,8 @@ const Info: React.FC<InfoProps> = ({ selected }: InfoProps) => (
 						Weight: <span>55</span>
 					</PokeStatus>
 				</PokeInfoWrapper>
-			</>
-		)}
+			</PokeViewRight>
+		</PokeView>
 	</InfoArea>
 );
 

@@ -9,6 +9,7 @@ export const DisplayArea = styled.div`
 	overflow-y: auto;
 	overflow-x: hidden;
 	transition: height 0.5s ease-in-out;
+	width: 100%;
 
 	&.selected {
 		height: 25vh;
